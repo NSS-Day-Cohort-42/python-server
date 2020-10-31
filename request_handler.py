@@ -123,7 +123,7 @@ class HandleRequests(BaseHTTPRequestHandler):
 # point of this application.
 def main():
     host = ''
-    port = 8088
+    port = 80
     HTTPServer((host, port), HandleRequests).serve_forever()
 
 
