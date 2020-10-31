@@ -1,5 +1,6 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
+import os
 import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from animals import get_all_animals, get_single_animal, create_animal
 from animals import delete_animal, update_animal
 from employees import get_single_employee, get_all_employees
@@ -123,9 +124,8 @@ class HandleRequests(BaseHTTPRequestHandler):
 # point of this application.
 def main():
     host = ''
-    port = 80
+    port = os.environ['PORT']
     HTTPServer((host, port), HandleRequests).serve_forever()
 
 
-if __name__ == "__main__":
-    main()
+main()
