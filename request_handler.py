@@ -124,7 +124,7 @@ class HandleRequests(BaseHTTPRequestHandler):
 # point of this application.
 def main():
     host = ''
-    port = os.environ['PORT']
+    port = int(os.environ['PORT'])
     HTTPServer((host, port), HandleRequests).serve_forever()
 
 
